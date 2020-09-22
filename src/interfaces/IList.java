@@ -9,7 +9,7 @@ public interface IList<T> {
 	
 	public boolean remove(T value);
 	
-	public boolean clear();
+	public void clear();
 	
 	public boolean contains(T value);
 	

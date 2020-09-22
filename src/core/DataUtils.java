@@ -28,4 +28,14 @@ public class DataUtils<T extends Comparable<T>> {
 		return false;
 
 	}
+
+	public static <T> boolean safeEqual(T object1, T object2) {
+		if (isNullObject(object1) && isNullObject(object2))
+			return true;
+		if (!isNullObject(object1) && !isNullObject(object2)) {
+			return object1.equals(object2);
+		}
+
+		return false;
+	}
 }
