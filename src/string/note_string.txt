@@ -1,0 +1,80 @@
+
+- String stored in a memory
+- String are basically squence of characters
+- String interal and new Object 
+      + VD: String s1 = "this is String" --> interal;
+      + Create value in String pool
+      + Value exist in String pool --> create reference to value string pool and not create data pool
+      + --> String pool memory optimal  
+      
+      ---------------------------------------------------------------------------------------
+      |																						|
+      |								-----------------------------------------------------   |																						|
+      |								|													|	|
+      |								|	---------------------------------------------	|	|
+      |								|	|											|	|	|
+      |								|	|											|	|	|
+      |								|	|											|	|	|
+      |								|	|			id : 17         				|	|	|
+      |								|	|			---------------------			|	|	|
+      |		---------------- 		|	|			|				    |			|	|	|			
+      |		| s1: 17       |   		|	|			|	"STRING 1"    	|			|	|	|	
+      |		----------------		|	|			|					|			|	|	|
+      |								|	|			|					|			|	|	|	
+      |		----------------		|	|			---------------------			|	|	|
+      |		| s2: 17       |		|	|											|	|	|
+      |		----------------		|	|											|	|	|
+      |								|	|											|	|	|
+      |								|	|											|	|	|
+      |								|	|											|	|	|
+      |								|	|											|	|	|
+      |								|	|		          STRING POOL   			|	|	|
+      |								|	---------------------------------------------	|	|
+      |								|													|	|
+      |								|					       HEAP						|	|
+      |								-----------------------------------------------------   | 
+      ---------------------------------------------------------------------------------------
+                        String s1 = "STRING 1"; --> new String value in pool   
+                        String s2 = "STRING 1"; --> reference to pool
+      
+      ========================================================================================
+      
+      ---------------------------------------------------------------------------------------
+      |																						|
+      |								-----------------------------------------------------   |																						|
+      |								|													|	|
+      |								|													|	|
+      |								|													|	|
+      |								|													|	|
+      |								|													|	|
+      |								|	     		id : 22         					|	|
+      |								|				---------------------				|	|
+      |		---------------- 		|				|				    |				|	|			
+      |		| s1: 22       |   		|				|	"STRING 1"    	|				|	|	
+      |		----------------		|				|					|				|	|
+      |								|				---------------------				|	|	
+      |		----------------		|													|	|
+      |		| s2: 23       |		|													|	|
+      |		----------------		|				id : 23								|	|
+      |								|				---------------------				|	|
+      |								|				|					|				|	|
+      |								|				|	"STRING 1"		|				|	|
+      |								|				|					|				|	|
+      |								|				---------------------  				|	|
+      |								|													|	|
+      |								|													|	|
+      |								|					       HEAP						|	|
+      |								-----------------------------------------------------   | 
+      ---------------------------------------------------------------------------------------
+      
+      					String s1 = new String("STRING 1"); --> new String value in heap   
+                        String s2 = new String("STRING 1"); --> new String value in heap
+      
+      + VD: String s2 = new String("this is String"); --> new Object 
+      
+      
+- String are immutable --> cannot change the string object itself b but can change the reference of the object
+      + String literal --> same content share the same storage in the string common pool
+      + change value in string commont pool --> all String literal call to String pool change
+
+- String are immutable --> StringBuffer and StringBuilder  are mutable
